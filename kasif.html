@@ -1,0 +1,115 @@
+﻿<html>
+<head>
+<title></title>
+<style type="text/css">
+body{
+margin:0 0;
+}
+.ekran{
+width:100%;
+height:200px;
+background-color:blue;
+z-index:-1;
+
+}
+.ana{
+width:1000px;
+margin:0 auto;
+}
+.ust{
+height:100;
+background-color:darkblue;
+color:white;
+font-size:36px;
+text-align:center;
+margin-top:-154px;
+}
+.menu{
+height:55px;
+background-color:aqua;
+}
+.java1{
+margin-right:75px;
+background-color:blue;
+color:white;
+border-radius:10px;
+margin-top:10;
+height:30px;
+}
+.java1:hover{
+background-color:white;
+color:blue;
+}
+.yan{float:left;
+border:10px solid white;
+margin:40px; padding:20px;}
+td{font:bold 16px Arial;}
+.giris{height:30px; width:100px; color:white; background-color:black; font:bold 16px Arial;
+border-radius:20px 0 20px 0;}
+.giris:hover{color:black; background-color:white;}
+.orta{background-color:rgb(86, 217, 176);height:500px;}
+</style>
+</head>
+<body bgcolor="gray">
+<div class="ekran">
+</div>
+<div class="ana">
+<div class="ust">
+<img src="cblogo.png" width="100px"; align="center">KKÇPAL JAVA
+</div>
+<div class="menu" align="center">
+<a href="kasif.html"><button class="java1"><strong>Java1</strong></button></a>
+<a href="kasif1.html"><button class="java1"><strong>Java2</strong></button></a>
+<a href="#"><button class="java1"><strong>Java3</strong></button></a>
+</div>
+<div class="orta">
+<div class="yan">
+<br>
+<table width="400">
+<tr><td>Toplam Seçmen Sayısı:</td>
+	<td><input type="text" name="tss" id="tss" value="11367598"disabled></td></tr>
+<tr><td>Açılan Sandık:</td>
+	<td><input type="text" name="as" id="as" value="0"disabled></td></tr>
+<tr><td>Kullanılan Oy:</td>
+	<td><input type="text" name="ko" id="ko" value="0"disabled></td></tr>
+<tr><td>Geçerli Oy:</td>
+	<td><input type="text" name="go" id="go"value="0"disabled></td></tr>
+<tr><td>Katılım Oranı:</td>
+	<td><input type="text" name="kato" id="kato"value="0" style="width:75px;"disabled>%</td></tr>
+</table>
+<br>
+</div>
+<div class="yan">
+<h1>Sandık Girişi</h1>
+<table>
+<tr><td>Kullanılan Oy:</td>
+	<td><input type="text" name="sgko" id="sgko"></td></tr>
+<tr><td>Geçerli Oy:</td>
+	<td><input type="text" name="sggo" id="sggo"></td></tr>
+<tr><td colspan="2" align="center">
+	<input type="button" onclick="tikla()" class="giris" value="GİRİŞ YAP"></td></tr>
+</table>
+</div>
+</div>
+</div>
+<script>
+function tikla(){
+var sgko=Number(document.getElementById('sgko').value);
+var sggo=Number(document.getElementById('sggo').value);
+var ko=Number(document.getElementById('ko').value);
+var as=Number(document.getElementById('as').value);
+var go=Number(document.getElementById('go').value);
+var tss=Number(document.getElementById('tss').value);
+if(sgko>=sggo){
+document.getElementById('ko').value=ko+sgko;
+document.getElementById('as').value=as+1;
+document.getElementById('go').value=go+sggo;
+document.getElementById('kato').value=(100*ko/tss).toFixed(5);
+}
+else alert("Geçerli oy kullanılan oydan fazla olamaz Lütfen geçerli bir değer giriniz");
+document.getElementById('sgko').value="";
+document.getElementById('sggo').value="";
+}
+</script>
+</body>
+</html>

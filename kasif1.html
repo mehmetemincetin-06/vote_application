@@ -1,0 +1,106 @@
+﻿<html>
+<head>
+<title></title>
+<style type="text/css">
+body{
+margin:0 0;
+}
+.ekran{
+width:100%;
+height:200px;
+background-color:blue;
+z-index:-1;
+
+}
+.ana{
+width:1000px;
+margin:0 auto;
+}
+.ust{
+height:100;
+background-color:darkblue;
+color:white;
+font-size:36px;
+text-align:center;
+margin-top:-154px;
+}
+.menu{
+height:55px;
+background-color:aqua;
+}
+.java1{
+margin-right:75px;
+background-color:blue;
+color:white;
+border-radius:10px;
+margin-top:10;
+height:30px;
+}
+.java1:hover{
+background-color:white;
+color:blue;
+}
+.yan{float:left;
+border:10px solid white;
+margin:40px; padding:20px;}
+td{font:bold 16px Arial;}
+.giris{height:30px; width:100px; color:white; background-color:black; font:bold 16px Arial;
+border-radius:20px 0 20px 0;}
+.giris:hover{color:black; background-color:white;}
+.orta{background-color:rgb(86, 217, 176);height:500px;}
+</style>
+</head>
+<body bgcolor="gray">
+<div class="ekran">
+</div>
+<div class="ana">
+<div class="ust">
+<img src="img100.jpg" width="150px"; align="center">KKÇPAL JAVA
+</div>
+<div class="menu" align="center">
+<a href="kasif.html"><button class="java1"><strong>Java1</strong></button></a>
+<a href="kasif1.html"><button class="java1"><strong>Java2</strong></button></a>
+<a href="#"><button class="java1"><strong>Java3</strong></button></a>
+</div>
+<div class="orta">
+<div class="yan">
+<table>
+<tr><td>Aday1</td><td><progress max="100" id="aday1" value="0"></progress></td><td>%<label id="a1label"></label></td></tr>
+<tr><td>Aday2</td><td><progress max="100" id="aday2" value="0"></progress></td><td>%<label id="a2label"></label></td></tr>
+<tr><td>Aday3</td><td><progress max="100" id="aday3" value="0"></progress></td><td>%<label id="a3label"></label></td></tr>
+</table>
+</div>
+<div class="yan">
+<h3>Cumhurbaşkanlığı Giriş Ekranı</h3>
+<table>
+<tr><td>Aday1</td><td><input type="text" name="a1ge" id="a1ge"></td></tr>
+<tr><td>Aday2</td><td><input type="text" name="a2ge" id="a2ge"></td></tr>
+<tr><td>Aday3</td><td><input type="text" name="a3ge" id="a3ge"></td></tr>
+<tr><td colspan="2" align="center"><input type="button" onclick="gonder()" value="GÖNDER"></td></tr>
+</table>
+</div>
+</div>
+</div>
+<script>
+function gonder(){
+var toplamoy=0,toplamaday1=0,toplamaday2=0,toplamaday3=0;
+var a1ge=Number(document.getElementById('a1ge').value);
+var a2ge=Number(document.getElementById('a2ge').value);
+var a3ge=Number(document.getElementById('a3ge').value);
+toplamoy+=a1ge+a2ge+a3ge;
+toplamaday1+=a1ge;
+toplamaday2+=a2ge;
+toplamaday3+=a3ge;
+document.getElementById('aday1').value=100*toplamaday1/toplamoy;
+document.getElementById('a1label').innerHTML=(100*toplamaday1/toplamoy).toFixed(5);
+document.getElementById('aday2').value=100*toplamaday2/toplamoy;
+document.getElementById('a2label').innerHTML=(100*toplamaday2/toplamoy).toFixed(5);
+document.getElementById('aday3').value=100*toplamaday3/toplamoy;
+document.getElementById('a3label').innerHTML=(100*toplamaday3/toplamoy).toFixed(5);
+document.getElementById('a1ge').value="";
+document.getElementById('a2ge').value="";
+document.getElementById('a3ge').value="";
+}
+</script>
+</body>
+</html>
